@@ -1,7 +1,7 @@
 <template>
 	<div>
 		
-		<mt-header title="严少之作"></mt-header>
+		<mt-header title="vue项目"></mt-header>
 		<router-view></router-view>
 		<nav class="mui-bar mui-bar-tab">
 			<router-link :to="{name:'home'}" class="mui-tab-item mui-active" href="#tabbar">

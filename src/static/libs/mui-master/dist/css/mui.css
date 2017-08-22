@@ -5494,7 +5494,19 @@ body > .mui-progressbar
 
 .icon-sousu:before { content: "\e751"; }
 
+.icon-liuyan:before { content: "\e604"; }
+
+.icon-zixun_sousuo:before { content: "\e6da"; }
+
+.icon-shangpinzhanshi:before { content: "\e65c"; }
+
 .icon-huiyuan:before { content: "\e7c1"; }
+
+.icon-tuwenfenxiang:before { content: "\e619"; }
+
+.icon-xinwenzixun:before { content: "\e661"; }
+
+.icon-lianxiwomen:before { content: "\e605"; }
 
 .icon-gouwuchekong:before { content: "\e600"; }
 
