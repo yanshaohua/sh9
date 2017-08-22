@@ -43,6 +43,21 @@ import Axios from 'axios';
 Vue.prototype.$ajax = Axios;
 Axios.defaults.baseURL = "http://182.254.146.100:8899/api/";
 
+
+Axios.interceptors.request.use(function (config) {
+	MintUi.Indicator.open({
+	  text: '加载中...',
+	  spinnerType: 'fading-circle'
+	});
+
+	return config;
+}) 
+Axios.interceptors.response.use(function (response) {
+	MintUi.Indicator.close();
+
+	return response;
+})
+
 new Vue({
 	el:'#app',
 	router,
