@@ -5,12 +5,23 @@ import Home from './component/home/home.vue';
 import Vip from './component/vip/vip.vue';
 import Shopcart from './component/shopcart/shopcart.vue';
 import Search from './component/search/search.vue';
+import NewsList from './component/news/newsList.vue';
+
+import moment from 'moment';
 
 // 加载 MintUi
 import MintUi from 'mint-ui';
 import 'mint-ui/lib/style.css';
 // 安装插件
 Vue.use(MintUi);
+
+Vue.filter('Time',function (result) {
+	return moment(result).format('YYYY-MM-DD')
+})
+
+import NavBar from './navbar.vue';
+
+Vue.component('NavBar',NavBar);
 
 // 加载 mui
 import './static/libs/mui-master/dist/css/mui.css';
@@ -35,6 +46,9 @@ let router = new VueRouter({
 		},
 		{
 			name:'search',path:'/search',component:Search
+		},
+		{
+			name:'newsList',path:'/news/list',component:NewsList
 		}
 	]
 })

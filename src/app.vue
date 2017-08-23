@@ -4,7 +4,7 @@
 		<mt-header title="vue项目"></mt-header>
 		<router-view></router-view>
 		<nav class="mui-bar mui-bar-tab">
-			<router-link :to="{name:'home'}" class="mui-tab-item mui-active" href="#tabbar">
+			<router-link :to="{name:'home',params:'新闻列表'}" class="mui-tab-item mui-active" href="#tabbar">
 				<span class="mui-icon icon-shouye"></span>
 				<span class="mui-tab-label">首页</span>
 			</router-link>
