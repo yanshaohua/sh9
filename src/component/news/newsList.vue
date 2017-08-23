@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<nav-bar title="新闻列表"></nav-bar>
 		<div class="tmpl">
 	        <ul class="mui-table-view">
@@ -40,7 +39,5 @@
 	}
 </script>
 <style>
-	.tmpl{
-		margin-bottom: 50px;
-	}
+	
 </style>

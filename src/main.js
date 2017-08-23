@@ -7,8 +7,12 @@ import Shopcart from './component/shopcart/shopcart.vue';
 import Search from './component/search/search.vue';
 import NewsList from './component/news/newsList.vue';
 import NewsDetail from './component/news/newsdetail.vue';
+import PhoneList from './component/phone/phoneList.vue';
 
 import moment from 'moment';
+
+// 引入css
+import './static/css/global.css';
 
 // 加载 MintUi
 import MintUi from 'mint-ui';
@@ -32,6 +36,7 @@ import VueRouter from 'vue-router';
 // 安装插件
 Vue.use(VueRouter);
 let router = new VueRouter({
+	linkActiveClass:'mui-active',
 	routes:[
 		{
 			path:'/',redirect:{name:'home'}
@@ -53,6 +58,9 @@ let router = new VueRouter({
 		},
 		{
 			name:'news.detail',path:'/news/detail',component:NewsDetail
+		},
+		{
+			name:'phone.list',path:'/phone/list',component:PhoneList
 		}
 	]
 })

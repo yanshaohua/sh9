@@ -1,7 +1,5 @@
 <template>
-	<div>
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		
+	<div>	
 		<!-- 轮播图 -->
 		<mt-swipe :auto="4000">
 		  <mt-swipe-item v-for='img in imgs'>
@@ -21,12 +19,12 @@
 		                </router-link>
 		            </li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-		            	<a href="#">
+		            	<router-link :to="{name:'phone.list'}">
 		                    <span class="mui-icon icon-tuwenfenxiang">
 		                    <!-- <span class="mui-badge">5</span> -->
 		                    </span>
 		                    <div class="mui-media-body">图文分享</div>
-		                </a>
+		                </router-link>
 		            </li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 		            	<a href="#">
