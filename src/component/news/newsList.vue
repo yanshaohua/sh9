@@ -5,7 +5,7 @@
 		<div class="tmpl">
 	        <ul class="mui-table-view">
 	            <li v-for="news in newsList" class="mui-table-view-cell mui-media">
-	                <a>
+	                <router-link :to="{name:'news.detail',query:{id:news.id}}">
 	                    <img class="mui-media-object mui-pull-left" :src="news.img_url">
 	                    <div class="mui-media-body">
 	                        <span>{{news.title}}</span>
@@ -14,7 +14,7 @@
 	                            <p>发表时间:{{news.add_time | Time}}</p>
 	                        </div>
 	                    </div>
-	                </a>
+	                </router-link>
 	            </li>
 	        </ul>
 	    </div>

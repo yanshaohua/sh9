@@ -6,6 +6,7 @@ import Vip from './component/vip/vip.vue';
 import Shopcart from './component/shopcart/shopcart.vue';
 import Search from './component/search/search.vue';
 import NewsList from './component/news/newsList.vue';
+import NewsDetail from './component/news/newsdetail.vue';
 
 import moment from 'moment';
 
@@ -49,6 +50,9 @@ let router = new VueRouter({
 		},
 		{
 			name:'newsList',path:'/news/list',component:NewsList
+		},
+		{
+			name:'news.detail',path:'/news/detail',component:NewsDetail
 		}
 	]
 })
