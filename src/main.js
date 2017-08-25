@@ -9,6 +9,9 @@ import NewsList from './component/news/newsList.vue';
 import NewsDetail from './component/news/newsdetail.vue';
 import PhoneList from './component/phone/phoneList.vue';
 import PhoneDetail from './component/phone/phoneDetail.vue';
+import GoodsList from './component/goods/goodslist.vue';
+import GoodsDetail from './component/goods/goodsdetail.vue';
+import GoodsComment from './component/goods/goodsComment.vue';
 
 import moment from 'moment';
 
@@ -31,7 +34,9 @@ Vue.filter('Time',function (result) {
 
 import NavBar from './component/commons/navbar.vue';
 import Comment from './component/commons/Comment.vue';
+import MySwipe from './component/commons/MySwipe.vue';
 Vue.component('NavBar',NavBar);
+Vue.component('MySwipe',MySwipe);
 Vue.component('Comment',Comment);
 
 // 加载 mui
@@ -70,6 +75,18 @@ let router = new VueRouter({
 		},
 		{
 			name:'phone.detail',path:'/phone/detail/:id',component:PhoneDetail
+		},
+		{
+			name:'goods.list',path:'/goods/list',component:GoodsList
+		},
+		{
+			name:'goods.detail',path:'/goods/detail/:id',component:GoodsDetail
+		},
+		{
+			name:'goods.comment',path:'/goods/comment',component:GoodsComment
+		},
+		{
+			name:'goods.photo',path:'/goods/photo',component:NewsDetail
 		}
 	]
 })

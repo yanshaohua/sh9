@@ -1,6 +1,6 @@
 <template>
 	<div class="tmpl">
-		<nav-bar title="新闻详情"></nav-bar>
+		<nav-bar :title="title"></nav-bar>
         <div class="news-title">
             <p>{{detailData.title}}</p>
             <div>
@@ -16,7 +16,8 @@
 	export default {
 		data(){
 			return {
-				detailData:{}
+				detailData:{},
+				title:''
 			}
 		},
 		created(){
@@ -28,6 +29,18 @@
 			.catch(err => {
 				console.log(err);
 			})
+		},
+		beforeRouteEnter (to,from,next){
+			let title = '';
+			if(from.name === 'goods.detail' || to.name.startsWith === 'goods'){
+				title="商品详情";
+			}else if(from.name === 'newsList' || to.name.startsWith === 'news'){
+				title="新闻详情";
+			}
+
+			next(vm => {
+				vm.title = title;
+			});
 		}
 	}
 </script>

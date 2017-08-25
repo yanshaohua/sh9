@@ -1,13 +1,7 @@
 <template>
 	<div>	
 		<!-- 轮播图 -->
-		<mt-swipe :auto="4000">
-		  <mt-swipe-item v-for='img in imgs'>
-		  	<a :href="img.url">
-		  		<img :src="img.img" alt="">
-		  	</a>
-		  </mt-swipe-item>
-		</mt-swipe>
+		<my-swipe url="getlunbo"></my-swipe>
 
 		<!-- 九宫格 -->
 		<div class="mui-content">
@@ -27,10 +21,10 @@
 		                </router-link>
 		            </li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-		            	<a href="#">
+		            	<router-link :to="{name:'goods.list'}">
 		                    <span class="mui-icon icon-shangpinzhanshi"></span>
 		                    <div class="mui-media-body">商品展示</div>
-		                </a>
+		                </router-link>
 		            </li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 		            	<a href="#">
@@ -58,18 +52,10 @@
 	export default {
 		data(){
 			return {
-				imgs:[]
+				
 			}
 		},
-		created(){
-			this.$ajax.get('getlunbo')
-			.then(res => {
-				this.imgs = res.data.message;
-			})
-			.catch(err => {
-				console.log("获取图片信息错误");
-			})
-		},
+		
 		methods:{
 			click(){
 			}
@@ -77,11 +63,5 @@
 	}
 </script>
 <style scoped>
-	.mint-swipe{
-		height: 200px;
-	}
-	.mint-swipe img{
-		width: 100%;
-		height: 100%;
-	}
+	
 </style>

@@ -1,9 +1,11 @@
 <template>
 	<div>
 		
-		<mt-header title="vue项目"></mt-header>
-		<router-view></router-view>
-		<nav class="mui-bar mui-bar-tab">
+		<mt-header title="vue项目" ref="n1"></mt-header>
+		<transition name="fade" mode="out-in">
+			<router-view></router-view>
+		</transition>
+		<nav class="mui-bar mui-bar-tab" ref="n2">
 			<router-link :to="{name:'home',params:'新闻列表'}" class="mui-tab-item" href="#tabbar">
 				<span class="mui-icon icon-shouye"></span>
 				<span class="mui-tab-label">首页</span>
@@ -16,7 +18,7 @@
 			</router-link>
 			<router-link :to="{name:'shopcart'}" class="mui-tab-item" href="#tabbar-with-contact">
 				<span class="mui-icon icon-gouwuchekong">
-					<span class="mui-badge">9</span>
+					<span class="mui-badge">{{changeNum}}</span>
 				</span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
@@ -28,8 +30,26 @@
 	</div>
 </template>
 <script>
-	
+import Connect from './component/commons/Connect.js';
+
+	export default {
+		data(){
+			return {
+				changeNum:0
+			}
+		},
+		created(){
+			Connect.$on('changeShopcart', (num) => {
+				this.changeNum += num;
+			})
+		}
+	}
 </script>
 <style>
-	
+	.fade-enter-active, .fade-leave-active {
+	  transition: opacity .5s
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+	  opacity: 0
+	}
 </style>
