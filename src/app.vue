@@ -31,16 +31,20 @@
 </template>
 <script>
 import Connect from './component/commons/Connect.js';
+import GoodsTools from './component/commons/GoodsTools.js';
 
 	export default {
 		data(){
 			return {
-				changeNum:0
+				changeNum:GoodsTools.getProdCount()
 			}
 		},
 		created(){
 			Connect.$on('changeShopcart', (num) => {
 				this.changeNum += num;
+			}),
+			Connect.$on('changeShopcart2', (num) => {
+				this.changeNum = num;
 			})
 		}
 	}

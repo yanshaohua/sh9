@@ -41,6 +41,7 @@
 </template>
 <script>
     import Connect from '../commons/Connect.js';
+    import GoodsToois from '../commons/GoodsTools.js';
 
 	export default {
 		data(){
@@ -70,6 +71,11 @@
                 this.isShow = true;
 
                 Connect.$emit('changeShopcart',this.passNum);
+
+                GoodsToois.addOrUpdate({
+                    id:this.detailData.id,
+                    num:this.passNum
+                })
             },
             afterEnter(){
                 this.isShow = false;
